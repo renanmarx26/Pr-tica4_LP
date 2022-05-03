@@ -1,0 +1,76 @@
+package texto;
+
+import java.util.Scanner;
+
+public class AvaliaFrase {
+
+	public static void main(String[] args) {
+		String frase;
+		int opcao, n, sentenca = 0;
+		Scanner ler = new Scanner (System.in);
+		System.out.println("Digite uma frase");
+		frase = ler.nextLine();
+		
+		do {
+				System.out.println("1 - Número de sentenças (ponto final, exclamação e interrogação)");
+				System.out.println("2 - Número de palavras");
+				System.out.println("3 - Número de vogais");
+				System.out.println("4 - Número de consoantes");
+				System.out.println("5 - Sair");
+				opcao = ler.nextLine();
+				
+				switch(opcao)
+				{
+				case 1:
+					n = frase.length();
+				    for (int i=0 ; i<n; i++) {
+				    	if ((frase.charAt(i) == '.') || (frase.charAt(i) == '!') || (frase.charAt(i) == '?'));
+				    	sentenca++;
+				    }
+				    System.out.println("Número de frase é:" + sentenca);
+				    break;
+				case 2:
+					
+					int var = frase.split(" ", -1).length - 1;
+					System.out.println((var+1) + " palavras");
+					break;
+					
+				case 3:
+				     int contarVogais = 0;
+				        
+				        frase.toLowerCase();
+				        
+				        for (int i = 0; i < frase.length(); i++){
+				            char c = frase.charAt(i);
+				            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+				      contarVogais++;
+				        }
+				        
+				        System.out.println((contarVogais+1) + " O número de vogais");
+				break;
+				
+				case 4:
+		             int vog = 0, cons = 0;
+		             
+		             frase = frase.toLowerCase();
+		             for(int i = 0; i < frase.length(); i++){
+		                 char c = frase.charAt(i);
+		                 if(c == 32) continue;
+		                 if(c == 97 | c == 101 | c == 105 | c == 111 | c == 117){
+		                     vog++;
+		                     continue;
+		                 }
+		                 if(c >= 98 && c <= 122) cons++;
+		             }
+		             System.out.println("Na frase \""+frase+"\" temos:\nVogais: "+vog+"\nConsoantes: "+cons);
+				break;
+				
+				case 5:
+					System.exit(0);
+					break;
+			}
+		}
+
+	}
+
+}
