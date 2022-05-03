@@ -1,0 +1,28 @@
+module Roblox {
+	public static void main(String[] args) {
+		  Scanner entrada = new Scanner(System.in);
+
+		  int Cor , Azul  , Vermelha , Verde;
+		  int[] vetor = new int[4];
+
+		  System.out.println ("Digite a cor da chave desejada:\n");
+		  Cor = entrada.nextInt();
+
+		  if (Cor = Azul){
+			  System.out.printIn("Ir para a porta Azul");
+			    
+			  }else if (Cor = Vermelha){
+			  System.out.println("Ir para a porta Vermelha");
+			  
+			  }else if (Cor = Verde){
+			  System.out.println ("Ir para a porta Verde");
+			  }
+
+			 if (Cor  != Azul && Verde && Vermelha ){
+			System.out.println ("Procure novamente."); 
+			}
+			 
+			 
+
+		}
+}
